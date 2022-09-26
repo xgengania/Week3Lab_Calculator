@@ -29,9 +29,18 @@ public class AgeCalculatorServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            String age = request.getParameter("age"); //retrieving from the form
+        
+            String ageString = request.getParameter("age"); //retrieving from the form
+            int age = Integer.parseInt(ageString);
             
             request.setAttribute("age", age);
+
+            if(age<=0 ){
+                request.setAttribute("age", age);
+                getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
+                    .forward(request,response);
+                return;
+            }
             
             getServletContext().getRequestDispatcher("/WEB-INF/sayAge.jsp")
                     .forward(request, response);
