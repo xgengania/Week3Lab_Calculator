@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Age Calculator</title>
     </head>
     <body>
         <h1>Age Calculator</h1>
@@ -18,5 +18,9 @@
             <input type="submit" value="Age next birthday">
             
         </form>
+            <br>
+            <span id=result>Result: ${message}</span>
+            <br>
+            <a href="/WEB-INF/arithmeticcalculator.jsp">Arithmetic Calculator</a>
     </body>
 </html>
